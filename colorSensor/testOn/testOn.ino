@@ -32,11 +32,11 @@ void loop() {
 
   Wire.beginTransmission(addr);
 
-  Wire.write(byte(0x17));
+  Wire.write(byte(0x16));
 
   Wire.requestFrom(addr, 1);
 
-  if(1 <= Wire.available()){
+  if(Wire.available() >= 1){
 
     readL = Wire.read();
 
@@ -44,23 +44,23 @@ void loop() {
 
   Wire.endTransmission();
 
-  // Wire.beginTransmission(addr);
+  Wire.beginTransmission(addr);
 
-  // Wire.write(byte(0x17));
+  Wire.write(byte(0x17));
 
-  // Wire.endTransmission();
+  Wire.endTransmission();
 
-  // Wire.requestFrom(addr, 1);
+  Wire.requestFrom(addr, 1);
 
-  // if(Wire.available() >= 1){
+  if(Wire.available() >= 1){
 
-  //   readH = Wire.read();
+     readH = Wire.read();
 
-  // }
+  }
 
   Serial.print("0x");
+  Serial.print(readH, HEX);
   Serial.println(readL, HEX);
-  // Serial.println(readL);
   
   delay(1000);
 
