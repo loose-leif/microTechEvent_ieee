@@ -14,10 +14,14 @@
 // Adafruit_TCS34725 tcs = Adafruit_TCS34725();
 
 /* Initialise with specific int time and gain values */
-Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_700MS, TCS34725_GAIN_1X);
+Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_600MS, TCS34725_GAIN_1X);
 
 void setup(void) {
   Serial.begin(9600);
+
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
   
   if (tcs.begin()) {
     Serial.println("Found sensor");
@@ -43,4 +47,34 @@ void loop(void) {
   Serial.print("B: "); Serial.print(b, DEC); Serial.print(" ");
   Serial.print("C: "); Serial.print(c, DEC); Serial.print(" ");
   Serial.println(" ");
+
+  if(r>1000){
+
+    digitalWrite(4, HIGH);
+    
+    
+  }else{
+
+    digitalWrite(4, LOW);
+    
+  }
+  if(g>1000){
+
+    digitalWrite(3, HIGH);
+    
+  } else {
+
+    digitalWrite(3, LOW);
+    
+  }
+  if(b>1000){
+
+    digitalWrite(2, HIGH);
+    
+  } else {
+
+    digitalWrite(2, LOW);
+    
+  }
+  
 }

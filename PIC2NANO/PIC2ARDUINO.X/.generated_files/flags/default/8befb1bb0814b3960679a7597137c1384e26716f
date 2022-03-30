@@ -1,0 +1,1 @@
+ -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"C:\Users\Chase\Documents\GitHub\microTechEvent_ieee\PIC2NANO\PIC2ARDUINO.X\AND08479_asmLib.s

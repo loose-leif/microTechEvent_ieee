@@ -9,7 +9,7 @@
 #include "AND08479_asmLib.h"
 #include "xc.h"
     
-#include "AND08479_LCD.h"
+#include "AND08479_I2C.h"
 #include "AND08479_delay.h"
 
 #pragma config ICS = PGx1          // Comm Channel Select (Emulator EMUC1/EMUD1 pins are shared with PGC1/PGD1)
@@ -28,7 +28,7 @@
 
 int main(void) {
     
-    lcd_init();
+    I2C_init();
     
     while(1){
         
@@ -39,25 +39,25 @@ int main(void) {
         // 0x45
         // 0x45
         
-        lcd_cmd(0x49);
-        lcd_cmd(0x45);
-        lcd_cmd(0x45);
-        lcd_cmd(0x45);
+        I2C_cmd(0x49);
+        I2C_cmd(0x45);
+        I2C_cmd(0x45);
+        I2C_cmd(0x45);
         
-//        lcd_cmd(0x5f);
-//        lcd_cmd(0x49);
-//        lcd_cmd(0x53);
-//        lcd_cmd(0x5f);
+//        I2C_cmd(0x5f);
+//        I2C_cmd(0x49);
+//        I2C_cmd(0x53);
+//        I2C_cmd(0x5f);
 //        
-//        lcd_cmd(0x5f);
-//        lcd_cmd(0x52);
-//        lcd_cmd(0x41);
-//        lcd_cmd(0x44);
+//        I2C_cmd(0x5f);
+//        I2C_cmd(0x52);
+//        I2C_cmd(0x41);
+//        I2C_cmd(0x44);
 //        
-//        lcd_cmd(0x5f);
-//        lcd_cmd(0x5f);
-//        lcd_cmd(0x5f);
-//        lcd_cmd(0x5f);
+//        I2C_cmd(0x5f);
+//        I2C_cmd(0x5f);
+//        I2C_cmd(0x5f);
+//        I2C_cmd(0x5f);
         
 
         

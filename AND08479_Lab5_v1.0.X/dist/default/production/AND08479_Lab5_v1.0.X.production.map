@@ -68,11 +68,11 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xce           0x135  (309)
-.text                        0x2ce               0x21c           0x32a  (810)
-.dinit                       0x4ea                 0x8             0xc  (12)
-.text                        0x4f2                 0x6             0x9  (9)
+.text                        0x2ce               0x1ec           0x2e2  (738)
+.dinit                       0x4ba                 0x8             0xc  (12)
+.text                        0x4c2                 0x6             0x9  (9)
 
-                 Total "program" memory used (bytes):          0x474  (1140) 1%
+                 Total "program" memory used (bytes):          0x42c  (1068) 1%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -111,8 +111,8 @@ External Symbols in Program Memory (by address):
                   0x000454                  _shift
                   0x00045e                  _loop
                   0x000468                  _main
-                  0x0004d0                  _delay
-                  0x0004f2                  _wait_1ms
+                  0x0004a0                  _delay
+                  0x0004c2                  _wait_1ms
 
 External Symbols in Program Memory (by name):
 
@@ -121,7 +121,7 @@ External Symbols in Program Memory (by name):
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0004d0                  _delay
+                  0x0004a0                  _delay
                   0x0002ce                  _lcd_cmd
                   0x00031e                  _lcd_init
                   0x0003ac                  _lcd_printStr
@@ -130,7 +130,7 @@ External Symbols in Program Memory (by name):
                   0x00035c                  _printChar
                   0x000344                  _setCursor
                   0x000454                  _shift
-                  0x0004f2                  _wait_1ms
+                  0x0004c2                  _wait_1ms
 
 Memory Configuration
 
@@ -220,12 +220,12 @@ __CONFIG1
  .debug_abbrev    0x0000a0         0x52 build/default/production/AND08479_delay.o
  .debug_abbrev    0x0000f2        0x10a build/default/production/AND08479_LCD.o
 
-.debug_line       0x000000        0x2f9
+.debug_line       0x000000        0x2ef
  *(.debug_line)
- .debug_line      0x000000        0x120 build/default/production/AND08479_main.o
- .debug_line      0x000120         0x40 build/default/production/AND08479_asmLib.o
- .debug_line      0x000160         0x3f build/default/production/AND08479_delay.o
- .debug_line      0x00019f        0x15a build/default/production/AND08479_LCD.o
+ .debug_line      0x000000        0x116 build/default/production/AND08479_main.o
+ .debug_line      0x000116         0x40 build/default/production/AND08479_asmLib.o
+ .debug_line      0x000156         0x3f build/default/production/AND08479_delay.o
+ .debug_line      0x000195        0x15a build/default/production/AND08479_LCD.o
 
 .debug_frame      0x000000        0x126
  *(.debug_frame)
@@ -887,7 +887,7 @@ __c30_signature
 .config_IESO      0x00abfc          0x2
  .config_IESO     0x00abfc          0x2 build/default/production/AND08479_main.o
 
-.text             0x0002ce        0x21c
+.text             0x0002ce        0x1ec
  .text            0x0002ce        0x19a build/default/production/AND08479_LCD.o
                   0x0002ce                  _lcd_cmd
                   0x00031e                  _lcd_init
@@ -896,14 +896,14 @@ __c30_signature
                   0x0003ac                  _lcd_printStr
                   0x000454                  _shift
                   0x00045e                  _loop
- .text            0x000468         0x68 build/default/production/AND08479_main.o
+ .text            0x000468         0x38 build/default/production/AND08479_main.o
                   0x000468                  _main
- .text            0x0004d0         0x1a build/default/production/AND08479_delay.o
-                  0x0004d0                  _delay
+ .text            0x0004a0         0x1a build/default/production/AND08479_delay.o
+                  0x0004a0                  _delay
 
-.dinit            0x0004ea          0x8
- .dinit           0x0004ea          0x8 data_init
+.dinit            0x0004ba          0x8
+ .dinit           0x0004ba          0x8 data_init
 
-.text             0x0004f2          0x6
- .text            0x0004f2          0x6 build/default/production/AND08479_asmLib.o
-                  0x0004f2                  _wait_1ms
+.text             0x0004c2          0x6
+ .text            0x0004c2          0x6 build/default/production/AND08479_asmLib.o
+                  0x0004c2                  _wait_1ms

@@ -2,7 +2,7 @@
 #include "AND08479_I2C.h"
 #include "xc.h"
 
-void lcd_cmd(char Package){
+void I2C_cmd(char Package){
     
     I2C2CONbits.SEN = 1;
     
@@ -32,7 +32,7 @@ void lcd_cmd(char Package){
     
 }
 
-void lcd_init(){
+void I2C_init(){
     
     _RCDIV = 0;
     AD1PCFG = 0xffff;
@@ -67,7 +67,7 @@ void lcd_init(){
 
 void setCursor(char x, char y){
     
-    lcd_cmd(0x80|((0x40*y)+x));
+    I2C_cmd(0x80|((0x40*y)+x));
     
 }
 
@@ -101,7 +101,7 @@ void printChar(char myChar){
     
 }
 
-void lcd_printStr(const char *s){
+void I2C_printStr(const char *s){
     
     I2C2CONbits.SEN = 1;
     
@@ -162,7 +162,7 @@ void lcd_printStr(const char *s){
 
 void shift(){
     
-    lcd_cmd(0b00011000);
+    I2C_cmd(0b00011000);
     
 }
 
