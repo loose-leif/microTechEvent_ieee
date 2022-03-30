@@ -30,7 +30,43 @@ int main(void) {
     
     lcd_init();
     
-    setCursor(0,0);
+    while(1){
+        
+        LATBbits.LATB7 = !LATBbits.LATB7;
+        
+        // 0x49
+        // 0x45
+        // 0x45
+        // 0x45
+        
+        lcd_cmd(0x49);
+        lcd_cmd(0x45);
+        lcd_cmd(0x45);
+        lcd_cmd(0x45);
+        
+        lcd_cmd(0x5f);
+        lcd_cmd(0x49);
+        lcd_cmd(0x53);
+        lcd_cmd(0x5f);
+        
+        lcd_cmd(0x5f);
+        lcd_cmd(0x52);
+        lcd_cmd(0x41);
+        lcd_cmd(0x44);
+        
+        lcd_cmd(0x5f);
+        lcd_cmd(0x5f);
+        lcd_cmd(0x5f);
+        lcd_cmd(0x5f);
+        
+
+        
+        delay(1000);
+        
+        
+    }
+//    
+//    setCursor(0,0);
 //    
 //    printChar('b');
 //    
@@ -58,15 +94,15 @@ int main(void) {
 //    
 //    printChar('e');
     
-    lcd_printStr("Hey guys!");
+//    lcd_printStr("Hey guys!");
+//    
+//    setCursor(0,1);
+//    
+//    lcd_printStr("Hey guys!");
     
-    setCursor(0,1);
-    
-    lcd_printStr("Hey guys!");
     
     
-    
-    loop();
+//    loop();
     
     return 0;
     

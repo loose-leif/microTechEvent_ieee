@@ -10,13 +10,13 @@ void lcd_cmd(char Package){
     
     IFS3bits.MI2C2IF = 0;
     
-    I2C2TRN = 0b01111100;   
+    I2C2TRN = 0b00010000;   
     
     while(IFS3bits.MI2C2IF == 0);
     
     IFS3bits.MI2C2IF = 0;
     
-    I2C2TRN = 0x00; 
+    I2C2TRN = 0x55; 
     
     while(IFS3bits.MI2C2IF == 0);
     
@@ -49,20 +49,20 @@ void lcd_init(){
     
     delay(40);
     
-    lcd_cmd(0b00111000); // function set
-    lcd_cmd(0b00111001); // advance
-    lcd_cmd(0b00010100); // interval osc
-    lcd_cmd(0b01110000); // contrast low
-    lcd_cmd(0b01010110); 
-    lcd_cmd(0b01101100); // follow control
-    
-    delay(200);
-    
-    lcd_cmd(0b00111000); // function set
-    lcd_cmd(0b00001100); // display on
-    lcd_cmd(0b00000001); // clear disp
-    
-    delay(5);
+//    lcd_cmd(0b00111000); // function set
+//    lcd_cmd(0b00111001); // advance
+//    lcd_cmd(0b00010100); // interval osc
+//    lcd_cmd(0b01110000); // contrast low
+//    lcd_cmd(0b01010110); 
+//    lcd_cmd(0b01101100); // follow control
+//    
+//    delay(200);
+//    
+//    lcd_cmd(0b00111000); // function set
+//    lcd_cmd(0b00001100); // display on
+//    lcd_cmd(0b00000001); // clear disp
+//    
+//    delay(5);
 }
 
 void setCursor(char x, char y){
