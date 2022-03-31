@@ -1,14 +1,5 @@
-// Wire Slave Receiver
-// by Nicholas Zambetti <http://www.zambetti.com>
-
 // Demonstrates use of the Wire library
-// Receives data as an I2C/TWI slave device
-// Refer to the "Wire Master Writer" example for use with this
-
-// Created 29 March 2006
-
-// This example code is in the public domain.
-
+// Receives data as an I2C/TWI support device
 
 #include <Wire.h>
 
@@ -24,8 +15,9 @@ void loop() {
   delay(100);
 }
 
-// function that executes whenever data is received from master
+// function that executes whenever data is received from PIC
 // this function is registered as an event, see setup()
+
 void receiveEvent(int howMany) {
 
   letterCount++;
@@ -36,8 +28,8 @@ void receiveEvent(int howMany) {
   }
   
   char controlReg = Wire.read();    // receive byte as an integer
-  //Serial.print(x);         // print the integer
-  char Package = Wire.read();    // receive byte as an integer
+  //Serial.print(x);                // print the integer
+  char Package = Wire.read();       // receive byte as an integer
   
   Serial.print(Package);         // print the integer
 

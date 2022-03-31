@@ -1,7 +1,7 @@
 #include <Adafruit_ADS1X15.h>
 
-// Adafruit_ADS1115 ads;  /* Use this for the 16-bit version */
-Adafruit_ADS1015 ads;     /* Use this for the 12-bit version */
+Adafruit_ADS1115 ads;  /* Use this for the 16-bit version */
+// Adafruit_ADS1015 ads;     /* Use this for the 12-bit version */
 
 // Pin connected to the ALERT/RDY signal for new sample notification.
 constexpr int READY_PIN = 3;
@@ -14,12 +14,14 @@ constexpr int READY_PIN = 3;
 #endif
 
 volatile bool new_data = false;
+
 void IRAM_ATTR NewDataReadyISR() {
   new_data = true;
 }
 
 void setup(void)
 {
+  
   Serial.begin(9600);
   Serial.println("Hello!");
 
@@ -45,16 +47,20 @@ void setup(void)
   }
 
   pinMode(READY_PIN, INPUT);
+  
   // We get a falling edge every time a new sample is ready.
+  
   attachInterrupt(digitalPinToInterrupt(READY_PIN), NewDataReadyISR, FALLING);
 
   // Start continuous conversions.
   ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, /*continuous=*/true);
+  
 }
 
 void loop(void)
 {
   // If we don't have new data, skip this iteration.
+  
   if (!new_data) {
     return;
   }
@@ -67,5 +73,6 @@ void loop(void)
 
   // In a real application we probably don't want to do a delay here if we are doing interrupt-based sampling, but we have a delay
   // in this example to avoid writing too much data to the serial port.
+  
   delay(1000);
 }

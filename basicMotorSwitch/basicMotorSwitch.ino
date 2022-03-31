@@ -1,7 +1,7 @@
 void setup(void){
 
-  pinMode(6, OUTPUT);
-  pinMode(12,INPUT);
+  pinMode(6, OUTPUT); // gate control for MOSFET
+  pinMode(12,INPUT); // input with physical pullUp and button
   
 }
 
